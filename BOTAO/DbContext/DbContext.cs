@@ -8,10 +8,10 @@ namespace BOTAO.DbContext {
         /// <summary>
         /// esta classe representa a BD do projeto
         /// </summary>
-        public class ApplicationDbContext : IdentityDbContext {
+        public class DbContext : IdentityDbContext {
 
-            public ApplicationDbContext(
-                DbContextOptions<ApplicationDbContext> options)
+            public DbContext(
+                DbContextOptions<DbContext> options)
                 : base(options) {
             }
 

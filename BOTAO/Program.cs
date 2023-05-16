@@ -1,4 +1,4 @@
-using BOTAO.DbContext;
+
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -12,12 +12,12 @@ var app = builder.Build();
 
 // esta variável contem a localização do servidor
 // a localização do Servidor está escrita no ficheiro 'appSettings.json'
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 
 // inicializar o serviço de acesso à BD (Sql server)
 builder.Services.AddDbContext<DbContext>(options =>
-    options.UseMySql(connectionString));
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment()) {
