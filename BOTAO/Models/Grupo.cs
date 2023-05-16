@@ -1,6 +1,11 @@
 ﻿namespace BOTAO.Models {
     public class Grupo {
 
+        public Grupo() {
+            // inicializar a lista de jogador do grupo
+            ListaJogador = new HashSet<Jogador>();
+        }
+
         public int Id { get; set; }
 
         /// <summary>
@@ -14,9 +19,9 @@
         public string Description { get; set; }
 
         /// <summary>
-        /// nome do criador
+        /// Lista dos Jogadores associados ao Grupo
         /// </summary>
-        public List<Array> membros { get; set; } = List.Empty;
+        public ICollection<Jogador> ListaJogador { get; set; }
 
 
 

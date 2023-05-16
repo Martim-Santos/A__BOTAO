@@ -9,10 +9,12 @@ namespace BOTAO.Models
         /// Descrição dos jogadores
         /// </summary>
         public Jogador() {
-            // inicializar a lista de animais do criador
+            // inicializar a lista de itens do jogador
             ListaItens = new HashSet<Itens>();
         }
+
         public int Id { get; set; }
+
         /// <summary>
         /// Nome do jogador
         /// </summary>
@@ -36,6 +38,10 @@ namespace BOTAO.Models
                       ErrorMessage = "A {0} tem de ter no mínimo {2} characteres")]
         public string Password { get; set; }
 
+        /// <summary>
+        /// score do criador
+        /// </summary>
+        public int click { get; set; }
 
         /// <summary>
         /// score do criador
@@ -60,6 +66,5 @@ namespace BOTAO.Models
         public ICollection<Itens> ListaItens { get; set; }
 
         
-
     }
 }

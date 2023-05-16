@@ -1,4 +1,6 @@
-﻿namespace BOTAO.Models {
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BOTAO.Models {
     public class Itens {
 
         public Itens() { }
@@ -22,9 +24,12 @@
         /// <summary>
         /// tipo de item
         /// </summary>
-        public string Tipo { get; set; }
-        
+        public int custo { get; set; }
 
-       
+        /// <summary>
+        /// Lista dos Itens associados ao Jogador
+        /// </summary>
+        public ICollection<Jogador> ListaJogador { get; set; }
+
     }
 }
