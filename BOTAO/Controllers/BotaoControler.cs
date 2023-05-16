@@ -18,12 +18,13 @@ namespace BOTAO.Controllers {
 
         [HttpGet]
         public ActionResult Index() {
-         Jogador jogador = new Jogador();
-            jogador.UserName = "martim";
-            jogador.Password = "password";
-            jogador.Email = "email@mail.com";
-            jogador.click = 1;
-            jogador.score = 0;
+            Jogador jogador = new Jogador {
+                UserName = "martim",
+                Password = "password",
+                Email = "email@mail.com",
+                click = 1,
+                score = 0
+            };
             return Ok(jogador);
         }
     }
