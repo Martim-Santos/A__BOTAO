@@ -11,6 +11,10 @@ namespace BOTAO.Models
         public Jogador() {
             // inicializar a lista de itens do jogador
             ListaItens = new HashSet<Itens>();
+            // inicializar a lista de Mensagens do jogador
+            ListaSent = new HashSet<Mensagem>();
+            // inicializar a lista de itens do jogador
+            ListaRecieved = new HashSet<Mensagem>();
         }
 
         public int Id { get; set; }
@@ -65,6 +69,15 @@ namespace BOTAO.Models
         /// </summary>
         public ICollection<Itens> ListaItens { get; set; }
 
-        
+        /// <summary>
+        /// Lista das Mensagens associados ao Jogador
+        /// </summary>
+        public ICollection<Mensagem> ListaSent { get; set; }
+
+        /// <summary>
+        /// Lista das Mensagens associados ao Jogador
+        /// </summary>
+        public ICollection<Mensagem> ListaRecieved { get; set; }
+
     }
 }

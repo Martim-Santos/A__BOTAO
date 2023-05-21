@@ -6,7 +6,7 @@ namespace BOTAO.Controllers {
     [Route("api")]
     public class BotaoControler : ControllerBase {
 
-        private static List<Itens> _previsoes = new List<Itens>
+        private static List<Itens> _Itens = new List<Itens>
         {
             new Itens { Name = "+1", Description="click vale mais 1", custo=10, Id=1},
             new Itens { Name = "x2", Description="click duplo", custo=50, Id=2},
@@ -19,13 +19,36 @@ namespace BOTAO.Controllers {
         [HttpGet]
         public ActionResult Index() {
             Jogador jogador = new Jogador {
-                UserName = "martim",
-                Password = "password",
+                UserName = "Unknown",
+                Password = "blank",
                 Email = "email@mail.com",
                 click = 1,
-                score = 0
+                score = 0,
+                Id = 1
             };
             return Ok(jogador);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetItemId(int id) {
+            var Item = _Itens.FirstOrDefault(I => I.Id == id);
+
+            if (Item == null) {
+                return NotFound();
+            }
+
+            return Ok(Item);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetItensId(int id) {
+            var Item = _Itens.FirstOrDefault(I => I.Id == id);
+
+            if (Item == null) {
+                return NotFound();
+            }
+
+            return Ok(Item);
         }
     }
 }

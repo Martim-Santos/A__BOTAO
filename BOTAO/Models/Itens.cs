@@ -3,7 +3,10 @@
 namespace BOTAO.Models {
     public class Itens {
 
-        public Itens() { }
+        public Itens() {
+            // inicializar a lista de itens do jogador
+            ListaJogador = new HashSet<Jogador>();
+        }
         public int Id { get; set; }
 
         /// <summary>
