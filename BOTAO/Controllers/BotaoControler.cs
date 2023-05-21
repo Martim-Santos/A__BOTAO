@@ -39,16 +39,5 @@ namespace BOTAO.Controllers {
 
             return Ok(Item);
         }
-
-        [HttpGet("{id}")]
-        public IActionResult GetItensId(int id) {
-            var Item = _Itens.FirstOrDefault(I => I.Id == id);
-
-            if (Item == null) {
-                return NotFound();
-            }
-
-            return Ok(Item);
-        }
     }
 }
